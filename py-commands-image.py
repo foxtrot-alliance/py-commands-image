@@ -152,12 +152,14 @@ def validate_project_parameters(parameters):
     if traces is True:
         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\tRegion = " + str(region))
 
-    if multiple == "" or multiple.upper() == "FALSE":
+    if multiple == "" or multiple.upper() == 'IGNORE':
+        multiple = 'IGNORE'
+    elif multiple.upper() == "FALSE":
         multiple = False
     elif multiple.upper() == "TRUE":
         multiple = True
     else:
-        return "ERROR: Invalid double-click parameter! Parameter = " + str(multiple)
+        return "ERROR: Invalid multiple parameter! Parameter = " + str(multiple)
 
     if traces is True:
         print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\tMultiple = " + str(multiple))
@@ -225,23 +227,32 @@ def execute_command(parameters):
 
             if traces is True:
                 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "=== * Locating image start * ===")
-
-            location = list(pyautogui.locateAllOnScreen(path, grayscale=grayscale, region=region))
-
-            if traces is True:
-                print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\t" + str(len(location)) + " image(s) located succesfully.")
-
-            if len(location) >= 2 and multiple is False:
-                return "ERROR: Multiple image matches found!"
-
-            if (len(location) - 1) >= number and number >= 0:
-                location = location[number]
+                
+            if multiple == 'IGNORE':
+                
+                location = pyautogui.locateOnScreen(path, grayscale=grayscale, region=region)
 
                 if traces is True:
-                    print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\tImage number " + str(number + 1) + " selected to work with.")
-
+                    print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\t" + " Image located succesfully.")
+                
             else:
-                return "ERROR: The specified image number parameter " + str(number) + " is not valid compared to the number of images found = " + str(len(location))
+
+                location = list(pyautogui.locateAllOnScreen(path, grayscale=grayscale, region=region))
+
+                if traces is True:
+                    print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\t" + str(len(location)) + " image(s) located succesfully.")
+
+                if len(location) >= 2 and multiple is False:
+                    return "ERROR: Multiple image matches found!"
+
+                if (len(location) - 1) >= number and number >= 0:
+                    location = location[number]
+
+                    if traces is True:
+                        print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "\tImage number " + str(number + 1) + " selected to work with.")
+
+                else:
+                    return "ERROR: The specified image number parameter " + str(number) + " is not valid compared to the number of images found = " + str(len(location))
 
             if traces is True:
                 print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "=== * Locating image end * ===")
@@ -288,6 +299,9 @@ def execute_command(parameters):
 
                 if traces is True:
                     print(datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S') + ": " + "=== * Move mouse back to original position end * ===")
+                    
+            elif "LOCATION" in command.upper():
+                print(f"IMAGE LOCATION: {str(location)}")
 
         else:
 
