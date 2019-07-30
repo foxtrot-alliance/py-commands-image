@@ -27,11 +27,11 @@ All the available commands are specified [here](#all-available-parameters). Note
 The solution offers three main commands:
 * Wait for an image to appear on the screen
 ```
-PROGRAM_EXE_PATH -command "wait" -path: "X" [-wait "X"] [-grayscale "X"] [-region "X"]
+PROGRAM_EXE_PATH -command "wait" -path "X" [-wait "X"] [-grayscale "X"] [-region "X"]
 ```
 * Find an image on the screen and click on it
 ```
-PROGRAM_EXE_PATH -command "click" -path: "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
+PROGRAM_EXE_PATH -command "click" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
 ```
 * Find an image on the screen and return the location of it
 ```
@@ -84,7 +84,7 @@ PROGRAM_EXE_PATH -command "location" -path "c:\image.png"
 ### Wait
 Parameters:
 ```
--command "wait" -path: "X" [-wait "X"] [-grayscale "X"] [-region "X"]
+-command "wait" -path "X" [-wait "X"] [-grayscale "X"] [-region "X"]
 ```
 Examples:
 ```
