@@ -84,67 +84,67 @@ PROGRAM_EXE_PATH -command "location" -path "c:\image.png"
 ### Wait
 Parameters:
 ```
--command "wait" -path "X" [-wait "X"] [-grayscale "X"] [-region "X"]
+PROGRAM_EXE_PATH -command "wait" -path "X" [-wait "X"] [-grayscale "X"] [-region "X"]
 ```
 Examples:
 ```
--command "wait" -path "c:\image.png"
--command "wait" -path "c:\image.png" -wait "120"
--command "wait" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
--command "wait" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
+PROGRAM_EXE_PATH -command "wait" -path "c:\image.png"
+PROGRAM_EXE_PATH -command "wait" -path "c:\image.png" -wait "120"
+PROGRAM_EXE_PATH -command "wait" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
+PROGRAM_EXE_PATH -command "wait" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
 ```
 
 ### Click
 Parameters:
 ```
--command "click" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
+PROGRAM_EXE_PATH -command "click" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
 ```
 Examples:
 ```
--command "click" -path "c:\image.png"
--command "click" -path "c:\image.png" -hover "true"
--command "click" -path "c:\image.png" -multiple "true" -number "2"
--command "click" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
--command "click" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
+PROGRAM_EXE_PATH -command "click" -path "c:\image.png"
+PROGRAM_EXE_PATH -command "click" -path "c:\image.png" -hover "true"
+PROGRAM_EXE_PATH -command "click" -path "c:\image.png" -multiple "true" -number "2"
+PROGRAM_EXE_PATH -command "click" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
+PROGRAM_EXE_PATH -command "click" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
 ```
 
 ### Double-click
 Parameters:
 ```
--command "doubleclick" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
+PROGRAM_EXE_PATH -command "doubleclick" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
 ```
 Examples:
 ```
--command "doubleclick" -path "c:\image.png"
--command "doubleclick" -path "c:\image.png" -hover "true"
--command "doubleclick" -path "c:\image.png" -multiple "true" -number "2"
--command "doubleclick" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
--command "doubleclick" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
+PROGRAM_EXE_PATH -command "doubleclick" -path "c:\image.png"
+PROGRAM_EXE_PATH -command "doubleclick" -path "c:\image.png" -hover "true"
+PROGRAM_EXE_PATH -command "doubleclick" -path "c:\image.png" -multiple "true" -number "2"
+PROGRAM_EXE_PATH -command "doubleclick" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
+PROGRAM_EXE_PATH -command "doubleclick" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
 ```
 
 ### Right-click
 Parameters:
 ```
--command "rightclick" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
+PROGRAM_EXE_PATH -command "rightclick" -path "X" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"] [-hover "X"]
 ```
 Examples:
 ```
--command "rightclick" -path "c:\image.png"
--command "rightclick" -path "c:\image.png" -hover "true"
--command "rightclick" -path "c:\image.png" -multiple "true" -number "2"
--command "rightclick" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
--command "rightclick" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
+PROGRAM_EXE_PATH -command "rightclick" -path "c:\image.png"
+PROGRAM_EXE_PATH -command "rightclick" -path "c:\image.png" -hover "true"
+PROGRAM_EXE_PATH -command "rightclick" -path "c:\image.png" -multiple "true" -number "2"
+PROGRAM_EXE_PATH -command "rightclick" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
+PROGRAM_EXE_PATH -command "rightclick" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
 ```
 
 ### Location
 Parameters:
 ```
--command "location" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"]
+PROGRAM_EXE_PATH -command "location" [-region "X"] [-grayscale "X"] [-multiple "X"] [-number "X"]
 ```
 Examples:
 ```
--command "location" -path "c:\image.png"
--command "location" -path "c:\image.png" -multiple "true" -number "2"
--command "location" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
--command "location" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
+PROGRAM_EXE_PATH -command "location" -path "c:\image.png"
+PROGRAM_EXE_PATH -command "location" -path "c:\image.png" -multiple "true" -number "2"
+PROGRAM_EXE_PATH -command "location" -path "c:\image.png" -region "(0, 0, 1000, 1000)"
+PROGRAM_EXE_PATH -command "location" -path "c:\image.png" -region "(1000, 1000, 1500, 1500)" -grayscale "true"
 ```
